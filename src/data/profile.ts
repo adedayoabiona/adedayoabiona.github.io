@@ -2,18 +2,14 @@ export const profile = {
   name: 'Adedayo Abiona',
   role: 'Data Engineer',
   tagline: 'I build the pipelines behind Africa’s private-capital data.',
-  /* Availability rather than a city: shown next to the role in the hero. */
-  location: 'Open to relocation',
   email: 'bnadedayo@gmail.com',
   links: {
     linkedin: 'https://www.linkedin.com/in/adedayo-a-71243413a/',
     github: 'https://github.com/adedayoabiona',
-    resume:
-      'https://docs.google.com/document/d/1r0dFWVF43Jx5L0jhXrPYMSXlE-8nNd86fAzuRM-dYms/edit?usp=sharing',
   },
-  /* Verbatim from the resume: this is the positioning statement, keep it intact. */
+  /* Adapted from the resume positioning statement. */
   summary:
-    'Data Engineer with 4+ years building production ELT pipelines, dimensional data warehouses, and scalable backend data systems in Python and SQL. Experienced across the modern data stack and cloud platforms (Microsoft Fabric, AWS, GCP), owning end-to-end decisions from ingestion and transformation to orchestration and monitoring as the sole data engineer on a team.',
+    'Data Engineer with 4+ years building production ELT pipelines, dimensional data warehouses, and scalable backend data systems in Python and SQL. Experienced across the modern data stack and cloud platforms (Microsoft Fabric, AWS, GCP), owning end-to-end decisions from ingestion and transformation to orchestration and monitoring.',
   philosophy:
     'I treat data quality as an engineering problem: automated testing, schema contracts, lineage documentation and CI/CD across every pipeline. A model nobody can trust is a model nobody uses.',
 } as const

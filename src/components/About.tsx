@@ -11,7 +11,7 @@ export function About() {
           <p>
             Most of my work sits where reliability actually gets decided: schema contracts that fail
             loudly, tests that run before anything reaches a dashboard, and lineage a colleague can
-            read without asking me. I&apos;ve been the only data engineer on the team for two years,
+            read without asking me. I&apos;ve owned the data platform end to end for two years,
             which means every decision from ingestion to orchestration to monitoring has my name on
             it, and that the boring parts, alerting and documentation, get done.
           </p>

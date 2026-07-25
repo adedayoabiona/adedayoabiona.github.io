@@ -1,11 +1,12 @@
 import { profile } from '../data/profile'
+import { running } from '../data/running'
 
 /* The label itself is the link, so no handles or host names are spelled out. */
 const channels = [
   { label: 'Email', href: `mailto:${profile.email}` },
   { label: 'LinkedIn', href: profile.links.linkedin },
   { label: 'GitHub', href: profile.links.github },
-  { label: 'Résumé', href: profile.links.resume },
+  { label: 'Strava', href: running.stravaUrl },
 ]
 
 export function Contact() {
@@ -41,8 +42,8 @@ export function Contact() {
         </h2>
 
         <p className="reveal mt-6 max-w-xl leading-relaxed text-ink-dim">
-          I&apos;m open to data engineering and platform roles, remote or on-site, and open to
-          relocation. The fastest way to reach me is email.
+          I&apos;m open to data engineering and platform roles, remote or on-site. The fastest way
+          to reach me is email.
         </p>
 
         <a

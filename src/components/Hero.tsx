@@ -18,8 +18,6 @@ export function Hero() {
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
         <p className="reveal mb-6 font-mono text-xs tracking-[0.2em] text-ink-dim">
           {profile.role.toUpperCase()}
-          <span className="mx-2 text-ink-faint">·</span>
-          {profile.location.toUpperCase()}
         </p>
 
         <h1 className="reveal text-4xl leading-[1.08] font-bold tracking-tight text-ink sm:text-6xl lg:text-7xl">
@@ -29,9 +27,8 @@ export function Hero() {
         <p className="reveal mt-6 max-w-2xl text-lg leading-relaxed text-ink-dim sm:text-xl">
           {profile.tagline}{' '}
           <span className="text-ink">
-            Sole data engineer behind the ELT pipelines, dbt warehouse and search infrastructure
-            powering Stears, the data platform African private equity and VC funds use to evaluate
-            deals.
+            I own the ELT pipelines, dbt warehouse and search infrastructure powering Stears, the
+            data platform African private equity and VC funds use to evaluate deals.
           </span>
         </p>
 

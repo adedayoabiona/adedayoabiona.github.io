@@ -8,7 +8,7 @@ export function Experience() {
       id="experience"
       index="03"
       title="experience"
-      lead="Four years of owning data systems end to end, most recently as the only data engineer on the team."
+      lead="Four years of owning data systems end to end, across ingestion, transformation, orchestration and monitoring."
     >
       <ol className="relative space-y-14 sm:space-y-16">
         {experience.map((role) => (

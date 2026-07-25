@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
-import { profile } from '../data/profile'
 import { SECTIONS } from '../data/sections'
+
+/* Contact is pulled out of the inline list and rendered as the trailing button,
+   so it must not also appear among the plain section links. */
+const INLINE_SECTIONS = SECTIONS.filter((section) => section.id !== 'contact')
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -47,7 +50,7 @@ export function Nav() {
         </a>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label="Sections">
-          {SECTIONS.map(({ id, label }) => (
+          {INLINE_SECTIONS.map(({ id, label }) => (
             <a
               key={id}
               href={`#${id}`}
@@ -61,12 +64,13 @@ export function Nav() {
             </a>
           ))}
           <a
-            href={profile.links.resume}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="rounded border border-accent-deep bg-accent/10 px-3 py-1.5 font-mono text-xs text-accent transition-colors hover:bg-accent/20"
+            href="#contact"
+            aria-current={active === 'contact' ? 'true' : undefined}
+            className={`rounded border border-accent-deep px-3 py-1.5 font-mono text-xs text-accent transition-colors ${
+              active === 'contact' ? 'bg-accent/20' : 'bg-accent/10 hover:bg-accent/20'
+            }`}
           >
-            résumé
+            contact
           </a>
         </nav>
 
@@ -86,7 +90,7 @@ export function Nav() {
           className="border-t border-line bg-base px-5 pb-5 md:hidden"
           aria-label="Sections"
         >
-          {SECTIONS.map(({ id, label }) => (
+          {INLINE_SECTIONS.map(({ id, label }) => (
             <a
               key={id}
               href={`#${id}`}
@@ -98,12 +102,11 @@ export function Nav() {
             </a>
           ))}
           <a
-            href={profile.links.resume}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="mt-4 inline-block rounded border border-accent-deep px-3 py-2 font-mono text-sm text-accent"
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="mt-4 inline-block rounded border border-accent-deep bg-accent/10 px-3 py-2 font-mono text-sm text-accent"
           >
-            résumé ↗
+            contact
           </a>
         </nav>
       ) : null}

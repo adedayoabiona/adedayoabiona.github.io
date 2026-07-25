@@ -26,7 +26,7 @@ export const experience: Role[] = [
     location: 'Hybrid',
     period: 'Mar 2024 to Present',
     blurb:
-      'Sole data engineer on the team behind Africa’s most comprehensive private-capital database, used by private equity firms, VCs and investment bankers evaluating African deals.',
+      'Data engineer on the team behind Africa’s most comprehensive private-capital database, used by private equity firms, VCs and investment bankers evaluating African deals.',
     bullets: [
       'Built and maintained multiple dbt data models on PostgreSQL powering Stears’ core data products: a 121-model companies & transactions schema (deals, investors, M&A, debt finance, company financials), a 20-model country risk schema, and an industry profiles schema, transforming raw Airbyte-ingested data into production-ready analytical tables.',
       'Engineered a real-time data sync pipeline (PostgreSQL, SQLAlchemy, Qdrant, Prefect) that indexes African investment transactions into a hybrid vector search engine (Gemini embeddings + BM25), replacing the traditional manual screener with AI-powered natural-language search across 30+ deal dimensions and cutting customer screening time from minutes to seconds.',
