@@ -4,7 +4,7 @@ export const research = {
   journal: 'FUOYE Journal of Engineering and Technology',
   published: 'May 2024',
   href: 'https://www.ajol.info/index.php/fuoyejet/article/view/269561',
-  repo: 'https://github.com/Adedayo19/MIRNet',
+  repo: 'https://github.com/adedayoabiona/MIRNet',
   /* Full author list, in publication order. */
   authors: [
     'Kayode P. Ayodele',

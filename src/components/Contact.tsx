@@ -3,7 +3,7 @@ import { profile } from '../data/profile'
 const channels = [
   { label: 'email', value: profile.email, href: `mailto:${profile.email}` },
   { label: 'linkedin', value: 'adedayo-a', href: profile.links.linkedin },
-  { label: 'github', value: 'Adedayo19', href: profile.links.github },
+  { label: 'github', value: 'adedayoabiona', href: profile.links.github },
   { label: 'résumé', value: 'google docs', href: profile.links.resume },
 ]
 

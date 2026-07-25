@@ -25,7 +25,7 @@ export const projects: Project[] = [
     detail:
       'Models `fact_voice_ai_sessions` for a Rwandan government services platform, flattening session data, user demographics, ASR confidence and escalation outcomes into one queryable grain. A compact end-to-end example of how I structure a warehouse: raw CSV sources, staged models, a tested fact table, exported results.',
     stack: ['dbt', 'DuckDB', 'SQL', 'Python'],
-    repo: 'https://github.com/Adedayo19/IremboAnalytics',
+    repo: 'https://github.com/adedayoabiona/IremboAnalytics',
     featured: true,
   },
   {
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     detail:
       'A deliberately small production-shaped pipeline: an authenticated REST extract, a deployment defined in `prefect.yaml`, and a schedule. The same orchestration pattern I run at scale on 50+ flows, sized so the whole thing can be read in one sitting.',
     stack: ['Python', 'Prefect', 'REST APIs'],
-    repo: 'https://github.com/Adedayo19/spotify-data-logger',
+    repo: 'https://github.com/adedayoabiona/spotify-data-logger',
     featured: true,
   },
   {
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     detail:
       'The model implementation behind the peer-reviewed paper in the FUOYE Journal of Engineering and Technology. Accuracy had to be traded against model compactness so the network could run on constrained embedded hardware rather than a server.',
     stack: ['Python', 'Deep learning', 'Jupyter'],
-    repo: 'https://github.com/Adedayo19/MIRNet',
+    repo: 'https://github.com/adedayoabiona/MIRNet',
     featured: true,
     extraLink: {
       label: 'Published paper',
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     detail:
       'End-to-end: NodeMCU firmware collecting sensor readings, a machine-learning model forecasting emissions, and a web app for access. This is the project behind both Data Science Nigeria awards, the AI for Energy Hackathon placing and the carbon-reduction poster award.',
     stack: ['Python', 'Machine learning', 'NodeMCU', 'IoT', 'Web app'],
-    repo: 'https://github.com/Adedayo19/Chemotronix',
+    repo: 'https://github.com/adedayoabiona/Chemotronix',
     extraLink: {
       label: 'Hackathon award',
       href: 'https://drive.google.com/file/d/1ygq-ueNa_0XG46PNga1iGDWKsW9HCVkI/view?usp=sharing',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     detail:
       'High-value customer identification, transaction-frequency segmentation, 365-day inactivity detection and a CLV estimate, written with CTEs and unit-aware currency conversion. The README documents the reasoning and the edge cases, including a null-name field worked around by concatenation.',
     stack: ['SQL', 'MySQL', 'CTEs', 'Window functions'],
-    repo: 'https://github.com/Adedayo19/DataAnalytics-Assessment',
+    repo: 'https://github.com/adedayoabiona/DataAnalytics-Assessment',
   },
   {
     name: 'WeatherWAN-ML',
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     detail:
       'Sequence modelling on sensor time series, and the precursor to the MIRNet research: the work that established which input parameters actually carried forecasting signal.',
     stack: ['Python', 'LSTM', 'Jupyter'],
-    repo: 'https://github.com/Adedayo19/WeatherWAN-ML',
+    repo: 'https://github.com/adedayoabiona/WeatherWAN-ML',
   },
 ]
 
@@ -91,7 +91,7 @@ export const projects: Project[] = [
 export const coursework = {
   label: 'AI Engineering with Python Nanodegree coursework',
   repos: [
-    { name: 'ImageClassifier', href: 'https://github.com/Adedayo19/ImageClassifier' },
-    { name: 'DogIdentifier', href: 'https://github.com/Adedayo19/DogIdentifier' },
+    { name: 'ImageClassifier', href: 'https://github.com/adedayoabiona/ImageClassifier' },
+    { name: 'DogIdentifier', href: 'https://github.com/adedayoabiona/DogIdentifier' },
   ],
 }

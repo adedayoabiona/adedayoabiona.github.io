@@ -6,7 +6,7 @@ export const profile = {
   email: 'bnadedayo@gmail.com',
   links: {
     linkedin: 'https://www.linkedin.com/in/adedayo-a-71243413a/',
-    github: 'https://github.com/Adedayo19',
+    github: 'https://github.com/adedayoabiona',
     resume:
       'https://docs.google.com/document/d/1r0dFWVF43Jx5L0jhXrPYMSXlE-8nNd86fAzuRM-dYms/edit?usp=sharing',
   },
