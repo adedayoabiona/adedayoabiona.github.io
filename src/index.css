@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Strictly monochrome: every value has R == G == B, so nothing carries a hue.
+     Hierarchy comes from lightness and weight alone. Avoid Tailwind's zinc/slate
+     scales here, they are subtly blue-tinted. */
+  --color-base: #080808;
+  --color-surface: #101010;
+  --color-surface-2: #181818;
+  --color-line: #262626;
+  --color-line-bright: #3d3d3d;
+
+  --color-ink: #f5f5f5;
+  --color-ink-dim: #a6a6a6;
+  /* #787878 on the base clears 4.5:1, so it stays legible at small sizes. */
+  --color-ink-faint: #787878;
+
+  /* "Accent" is simply the brightest end of the same scale. */
+  --color-accent: #ffffff;
+  --color-accent-dim: #d6d6d6;
+  --color-accent-deep: #555555;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the sticky nav doesn't cover section headings. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-base);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  /* Faint grid, like a schematic. Sits behind the hero only. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, var(--color-line) 55%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--color-line) 55%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px rgb(255 255 255 / 0.25);
+  }
+
+  /* Scroll-reveal is a progressive enhancement: the hidden state only applies
+     once JS has added .js-reveal to <html>, so if the script fails, the tab is
+     throttled, or the observer never fires, the content is simply visible. */
+  .js-reveal .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  .js-reveal .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Marching dashes along the pipeline edges. Dasharray total is 14, so a full
+   14-unit offset shift makes one seamless loop. */
+@keyframes pipeline-flow {
+  from {
+    stroke-dashoffset: 14;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+  }
+}
