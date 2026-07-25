@@ -42,7 +42,7 @@ export default function App() {
           <p>
             © {new Date().getFullYear()} {profile.name}
           </p>
-          <p>Built with React, TypeScript and Tailwind. Deployed on GitHub Pages.</p>
+          <p>Designed and built by me, fully vibe-coded 😄</p>
         </div>
       </footer>
     </>

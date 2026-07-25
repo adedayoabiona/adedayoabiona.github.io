@@ -1,20 +1,29 @@
+import type { PipelineSpec } from './pipelines'
+import { freelancePipeline } from './pipelines'
+
 export type Role = {
   company: string
+  /** Makes the company name a link to its site. */
+  companyHref?: string
   title: string
-  location: string
+  /** Omitted where the role's location isn't worth stating. */
+  location?: string
   period: string
   /** Rendered as a lead-in above the bullets. */
   blurb: string
   bullets: string[]
   stack: string[]
   link?: { label: string; href: string }
+  /** Rendered under the bullets when the role's architecture is worth drawing. */
+  pipeline?: PipelineSpec
 }
 
 export const experience: Role[] = [
   {
     company: 'Stears Inc',
+    companyHref: 'https://stears.co',
     title: 'Data Engineer',
-    location: 'Lagos, Nigeria',
+    location: 'Hybrid',
     period: 'Mar 2024 to Present',
     blurb:
       'Sole data engineer on the team behind Africa’s most comprehensive private-capital database, used by private equity firms, VCs and investment bankers evaluating African deals.',
@@ -48,17 +57,17 @@ export const experience: Role[] = [
     blurb:
       'Contract data engineering across client analytics platforms, alongside published research on compact deep-learning models for embedded weather forecasting.',
     bullets: [
-      'Designed and maintained 15+ scalable Spark and dbt ETL pipelines for client analytics platforms, modelling 40+ raw operational sources into tested, production-ready Snowflake tables and cutting pipeline runtimes significantly.',
-      'Built ingestion connectors and orchestrated workflows (PySpark, Airflow) pulling from 10+ REST APIs and databases, replacing manual exports and saving clients hours of weekly data-prep work.',
+      'Designed and maintained 15+ scalable data pipelines orchestrated with Airflow using PySpark and Snowflake, ingesting data from 10+ REST APIs and operational databases, transforming 40+ raw data sources into tested, production ready Snowflake tables, replacing manual exports, reducing pipeline runtimes significantly by 40% through optimized batch writes, and saving clients hours of weekly data preparation.',
       'Delivered analytics-ready data marts and BI dashboards on Snowflake that gave stakeholders self-serve access to key metrics, significantly reducing recurring ad-hoc reporting requests.',
       'Designed and deployed NoSQL data models in MongoDB for an e-commerce platform, cutting average product page query time from ~800ms to under 100ms through strategic indexing and schema denormalisation across product catalogs and nested order-history documents.',
       'Co-authored peer-reviewed research on MIRNet, a compact mixed-input residual network for air temperature forecasting on low-power embedded devices, published in the FUOYE Journal of Engineering and Technology.',
     ],
-    stack: ['PySpark', 'Airflow', 'dbt', 'Snowflake', 'MongoDB', 'Python'],
+    stack: ['PySpark', 'Airflow', 'Snowflake', 'MongoDB', 'Python'],
     link: {
       label: 'Read the paper',
       href: 'https://www.ajol.info/index.php/fuoyejet/article/view/269561',
     },
+    pipeline: freelancePipeline,
   },
   {
     company: 'Impaakt',

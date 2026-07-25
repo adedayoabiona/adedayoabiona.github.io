@@ -99,7 +99,7 @@ export function Projects() {
               <p className="mt-2 text-sm leading-snug font-medium text-ink">{award.title}</p>
               <p className="mt-1.5 font-mono text-[11px] text-ink-faint">{award.event}</p>
               <ExtLink href={award.href} className="mt-3">
-                certificate
+                {award.linkLabel}
               </ExtLink>
             </li>
           ))}

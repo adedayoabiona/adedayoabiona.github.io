@@ -52,7 +52,7 @@ export type Certification = {
 export const certifications: Certification[] = [
   {
     issuer: 'Microsoft Certified',
-    name: 'Fabric Data Engineer Associate',
+    name: 'Fabric Data Engineer Associate (DP-700)',
     href: 'https://learn.microsoft.com/api/credentials/share/en-us/Adedayo-3121/E332C16A0A40E6A1?sharingId=B7995BF681002EA2',
     skills: [
       'Microsoft Fabric',
@@ -92,6 +92,8 @@ export type Award = {
   title: string
   event: string
   href: string
+  /** What the link actually points at, since not every award links to a certificate. */
+  linkLabel: string
 }
 
 export const awards: Award[] = [
@@ -100,12 +102,14 @@ export const awards: Award[] = [
     title: 'AI for Energy Hackathon',
     event: 'Data Science Nigeria, 2021',
     href: 'https://drive.google.com/file/d/1ygq-ueNa_0XG46PNga1iGDWKsW9HCVkI/view?usp=sharing',
+    linkLabel: 'certificate',
   },
   {
     placing: '2nd runner up',
     title: 'Best poster award, IoT device enabled with AI for carbon reduction',
     event: 'Data Science Nigeria AI Bootcamp, 2021',
     href: 'https://drive.google.com/file/d/1ssYG19zbnEyV9NvUUElN1iqSuwOSGPcD/view?usp=sharing',
+    linkLabel: 'view the poster',
   },
 ]
 

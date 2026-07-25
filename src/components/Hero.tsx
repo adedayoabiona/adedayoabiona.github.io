@@ -1,4 +1,5 @@
 import { heroStats, profile } from '../data/profile'
+import { stearsPipeline } from '../data/pipelines'
 import { PipelineDiagram } from './PipelineDiagram'
 
 export function Hero() {
@@ -61,7 +62,7 @@ export function Hero() {
         </dl>
 
         <div className="reveal mt-20">
-          <PipelineDiagram />
+          <PipelineDiagram spec={stearsPipeline} />
         </div>
       </div>
     </section>

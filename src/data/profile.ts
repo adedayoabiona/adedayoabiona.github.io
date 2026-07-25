@@ -2,7 +2,8 @@ export const profile = {
   name: 'Adedayo Abiona',
   role: 'Data Engineer',
   tagline: 'I build the pipelines behind Africa’s private-capital data.',
-  location: 'Lagos, Nigeria',
+  /* Availability rather than a city: shown next to the role in the hero. */
+  location: 'Open to relocation',
   email: 'bnadedayo@gmail.com',
   links: {
     linkedin: 'https://www.linkedin.com/in/adedayo-a-71243413a/',

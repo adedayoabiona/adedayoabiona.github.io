@@ -1,10 +1,11 @@
 import { profile } from '../data/profile'
 
+/* The label itself is the link, so no handles or host names are spelled out. */
 const channels = [
-  { label: 'email', value: profile.email, href: `mailto:${profile.email}` },
-  { label: 'linkedin', value: 'adedayo-a', href: profile.links.linkedin },
-  { label: 'github', value: 'adedayoabiona', href: profile.links.github },
-  { label: 'résumé', value: 'google docs', href: profile.links.resume },
+  { label: 'Email', href: `mailto:${profile.email}` },
+  { label: 'LinkedIn', href: profile.links.linkedin },
+  { label: 'GitHub', href: profile.links.github },
+  { label: 'Résumé', href: profile.links.resume },
 ]
 
 export function Contact() {
@@ -40,8 +41,8 @@ export function Contact() {
         </h2>
 
         <p className="reveal mt-6 max-w-xl leading-relaxed text-ink-dim">
-          I&apos;m open to data engineering and platform roles, remote or Lagos-based. The fastest
-          way to reach me is email.
+          I&apos;m open to data engineering and platform roles, remote or on-site, and open to
+          relocation. The fastest way to reach me is email.
         </p>
 
         <a
@@ -51,25 +52,31 @@ export function Contact() {
           {profile.email}
         </a>
 
-        <dl className="reveal mt-14 grid gap-6 border-t border-line pt-8 sm:grid-cols-4">
-          {channels.map((channel) => (
-            <div key={channel.label}>
-              <dt className="font-mono text-[11px] tracking-[0.14em] text-ink-faint">
-                {channel.label.toUpperCase()}
-              </dt>
-              <dd className="mt-2">
+        <ul className="reveal mt-14 flex flex-wrap gap-x-10 gap-y-4 border-t border-line pt-8">
+          {channels.map((channel) => {
+            const external = !channel.href.startsWith('mailto:')
+            return (
+              <li key={channel.label}>
                 <a
                   href={channel.href}
-                  target={channel.href.startsWith('mailto:') ? undefined : '_blank'}
-                  rel="noreferrer noopener"
-                  className="font-mono text-sm break-words text-ink-dim transition-colors hover:text-ink"
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noreferrer noopener' : undefined}
+                  className="group inline-flex items-center gap-1.5 font-mono text-sm text-ink-dim underline decoration-line-bright underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
                 >
-                  {channel.value}
+                  {channel.label}
+                  {external ? (
+                    <span
+                      aria-hidden
+                      className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    >
+                      ↗
+                    </span>
+                  ) : null}
                 </a>
-              </dd>
-            </div>
-          ))}
-        </dl>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </section>
   )

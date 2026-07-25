@@ -1,4 +1,5 @@
 import { experience } from '../data/experience'
+import { PipelineDiagram } from './PipelineDiagram'
 import { ExtLink, Section, Tag } from './ui'
 
 export function Experience() {
@@ -22,15 +23,38 @@ export function Experience() {
             />
 
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <h3 className="text-xl font-semibold text-ink">{role.company}</h3>
+              <h3 className="text-xl font-semibold text-ink">
+                {role.companyHref ? (
+                  <a
+                    href={role.companyHref}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="group inline-flex items-baseline gap-1.5 underline decoration-line-bright underline-offset-4 transition-colors hover:decoration-ink"
+                  >
+                    {role.company}
+                    <span
+                      aria-hidden
+                      className="text-sm font-normal text-ink-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    >
+                      ↗
+                    </span>
+                  </a>
+                ) : (
+                  role.company
+                )}
+              </h3>
               <span className="text-ink-faint">·</span>
               <p className="text-base text-ink-dim">{role.title}</p>
             </div>
 
             <p className="mt-2 font-mono text-xs text-ink-faint">
               {role.period}
-              <span className="mx-2">·</span>
-              {role.location}
+              {role.location ? (
+                <>
+                  <span className="mx-2">·</span>
+                  {role.location}
+                </>
+              ) : null}
             </p>
 
             <p className="mt-5 max-w-3xl leading-relaxed text-ink">{role.blurb}</p>
@@ -45,6 +69,12 @@ export function Experience() {
                 </li>
               ))}
             </ul>
+
+            {role.pipeline ? (
+              <div className="mt-8 rounded-lg border border-line bg-surface/60 p-5 sm:p-6">
+                <PipelineDiagram spec={role.pipeline} />
+              </div>
+            ) : null}
 
             <div className="mt-6 flex flex-wrap items-center gap-2">
               {role.stack.map((tech) => (
