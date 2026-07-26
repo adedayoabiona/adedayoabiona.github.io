@@ -9,7 +9,7 @@ export const skillGroups: SkillGroup[] = [
   {
     index: '01',
     label: 'Languages',
-    items: ['Python', 'SQL', 'JavaScript'],
+    items: ['Python', 'SQL', 'JavaScript', 'Scala'],
   },
   {
     index: '02',
