@@ -33,7 +33,7 @@ export const projects: Project[] = [
     year: '2024',
     summary: 'Scheduled Prefect flow that captures listening history into a running dataset.',
     detail:
-      'A deliberately small production-shaped pipeline: an authenticated REST extract, a deployment defined in `prefect.yaml`, and a schedule. The same orchestration pattern I run at scale on 50+ flows, sized so the whole thing can be read in one sitting.',
+      'A deliberately small production-shaped pipeline: an authenticated REST extract, a deployment defined in `prefect.yaml`, and a schedule. The same orchestration pattern I run at scale in production, sized so the whole thing can be read in one sitting.',
     stack: ['Python', 'Prefect', 'REST APIs'],
     repo: 'https://github.com/adedayoabiona/spotify-data-logger',
     featured: true,

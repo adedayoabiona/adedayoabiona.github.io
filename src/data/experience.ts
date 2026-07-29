@@ -28,12 +28,13 @@ export const experience: Role[] = [
     blurb:
       'Data engineer on the team behind Africa’s most comprehensive private-capital database, used by private equity firms, VCs and investment bankers evaluating African deals.',
     bullets: [
-      'Built and maintained multiple dbt data models on PostgreSQL powering Stears’ core data products: a 121-model companies & transactions schema (deals, investors, M&A, debt finance, company financials), a 20-model country risk schema, and an industry profiles schema, transforming raw Airbyte-ingested data into production-ready analytical tables.',
-      'Engineered a real-time data sync pipeline (PostgreSQL, SQLAlchemy, Qdrant, Prefect) that indexes African investment transactions into a hybrid vector search engine (Gemini embeddings + BM25), replacing the traditional manual screener with AI-powered natural-language search across 30+ deal dimensions and cutting customer screening time from minutes to seconds.',
-      'Built an AI-driven data extraction pipeline using CrewAI and the Claude API to automate collection of African macroeconomic data from APIs, web sources and government reports. Normalised and validated data with Pydantic before upserting to Airtable, replacing manual monitoring across 50 indicators including treasury bills, inflation and CPI in all 54 African countries.',
-      'Built and maintained 50+ Prefect 3.x ELT pipelines orchestrating Airbyte ingestion of 61+ raw tables into PostgreSQL, with dbt transforming models consumed by Qdrant, Algolia and AWS S3. Reduced pipeline run time by 67% (15 minutes to under 5) by replacing full table reloads with CDC via PostgreSQL logical replication.',
-      'Designed, deployed and managed a Flask and OCR document extraction microservice on Kubernetes, processing 100+ financial reports weekly into structured data. Packaged with Docker and released through Git.',
-      'Led an end-to-end migration of the operational data layer from Airtable to NocoDB, rebuilding 200+ SQL models and re-architecting all Airbyte ingestion connections, eliminating thousands of dollars in recurring tool costs with zero downtime for downstream data products.',
+      'Own the dbt warehouse every Stears data product reads from, modelling companies & transactions, country risk and industry profiles into the tables behind each screener and rating.',
+      'Replaced the filter-by-filter deal screener with plain-English search by syncing transactions into a hybrid vector engine, cutting screening from minutes to seconds.',
+      'Cut ELT pipeline runtime from 15 minutes to under 5 by moving off full table reloads onto CDC via PostgreSQL logical replication.',
+      'Built and run a Flask OCR document extraction service on Kubernetes, feeding multiple AI workflows that turn financial reports into structured data and taking analysts out of the manual reading loop.',
+      'Automated the macro data collection behind country risk with Prefect flows that scrape central bank PDFs, HTML pages and APIs before a CrewAI agent infers and writes 100+ indicators straight to the operational layer.',
+      'Led the operational data layer migration from Airtable to NocoDB with zero downtime for downstream products, cutting thousands of dollars in recurring tool spend.',
+      'Built a FastAPI deduplication service for that layer, combining fuzzy matching with Claude validation and a field-by-field review UI to keep duplicate companies and funds out of the deal database.',
     ],
     stack: [
       'Python',
@@ -42,6 +43,9 @@ export const experience: Role[] = [
       'Prefect',
       'Airbyte',
       'Qdrant',
+      'Flask',
+      'FastAPI',
+      'NocoDB',
       'Kubernetes',
       'Docker',
       'AWS S3',
@@ -57,10 +61,9 @@ export const experience: Role[] = [
     blurb:
       'Contract data engineering across client analytics platforms, alongside published research on compact deep-learning models for embedded weather forecasting.',
     bullets: [
-      'Designed and maintained 15+ scalable data pipelines orchestrated with Airflow using PySpark and Snowflake, ingesting data from 10+ REST APIs and operational databases, transforming 40+ raw data sources into tested, production ready Snowflake tables, replacing manual exports, reducing pipeline runtimes significantly by 40% through optimized batch writes, and saving clients hours of weekly data preparation.',
-      'Delivered analytics-ready data marts and BI dashboards on Snowflake that gave stakeholders self-serve access to key metrics, significantly reducing recurring ad-hoc reporting requests.',
-      'Designed and deployed NoSQL data models in MongoDB for an e-commerce platform, cutting average product page query time from ~800ms to under 100ms through strategic indexing and schema denormalisation across product catalogs and nested order-history documents.',
-      'Co-authored peer-reviewed research on MIRNet, a compact mixed-input residual network for air temperature forecasting on low-power embedded devices, published in the FUOYE Journal of Engineering and Technology.',
+      'Built Airflow-orchestrated pipelines on PySpark and Snowflake, replacing manual client exports with tested production tables and cutting runtimes 40% through optimised batch writes.',
+      'Cut average product page query time from ~800ms to under 100ms for an e-commerce client, through indexing and schema denormalisation of the MongoDB catalog and order-history models.',
+      'Co-authored peer-reviewed research on MIRNet, a compact residual network for air temperature forecasting on low-power embedded devices.',
     ],
     stack: ['PySpark', 'Airflow', 'Snowflake', 'MongoDB', 'Python'],
     link: {
@@ -77,8 +80,7 @@ export const experience: Role[] = [
     blurb:
       'Qualitative and quantitative analysis of sustainability performance at globally listed corporations.',
     bullets: [
-      'Wrote 310+ technical analyses assessing the sustainability efforts of globally renowned corporations, holding an average peer rating of 4.0/5.',
-      'Specialised in comprehensive written analysis of material sustainability issues, combining quantitative disclosure data with qualitative assessment of corporate impact at scale.',
+      'Wrote 310+ technical analyses on material sustainability issues, holding an average peer rating of 4.0/5.',
     ],
     stack: ['ESG analysis', 'Research', 'Data storytelling'],
   },

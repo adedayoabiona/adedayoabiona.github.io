@@ -1,4 +1,4 @@
-import { heroStats, profile } from '../data/profile'
+import { profile } from '../data/profile'
 import { stearsPipeline } from '../data/pipelines'
 import { PipelineDiagram } from './PipelineDiagram'
 
@@ -47,18 +47,9 @@ export function Hero() {
           </a>
         </div>
 
-        <dl className="reveal mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-8 sm:grid-cols-4">
-          {heroStats.map(({ value, label }) => (
-            /* Reversed so the value reads first visually while the DOM keeps
-               the spec's dt-before-dd order. */
-            <div key={label} className="flex flex-col-reverse gap-1.5">
-              <dt className="font-mono text-[11px] leading-snug text-ink-faint">{label}</dt>
-              <dd className="text-3xl font-semibold text-accent text-glow sm:text-4xl">{value}</dd>
-            </div>
-          ))}
-        </dl>
-
-        <div className="reveal mt-20">
+        {/* The diagram carries the hero on its own; a stat band above it only
+            competed for the same attention. */}
+        <div className="reveal mt-16 border-t border-line pt-14">
           <PipelineDiagram spec={stearsPipeline} />
         </div>
       </div>

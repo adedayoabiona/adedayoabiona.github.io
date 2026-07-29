@@ -79,7 +79,7 @@ export const stearsPipeline: PipelineSpec = {
   ],
   orchestrator: {
     name: 'Prefect 3.x',
-    detail: '50+ flows · scheduling · retries · alerting · CI/CD',
+    detail: 'scheduling · retries · alerting · CI/CD',
     result: '15 min → <5 min',
   },
   edgeNote: { afterColumn: 1, label: 'CDC' },
@@ -115,7 +115,7 @@ export const freelancePipeline: PipelineSpec = {
   ],
   orchestrator: {
     name: 'Airflow',
-    detail: '15+ pipelines · DAG scheduling · retries · backfills',
+    detail: 'DAG scheduling · retries · backfills',
     result: '40% faster',
   },
   edgeNote: { afterColumn: 1, label: 'batch writes' },
