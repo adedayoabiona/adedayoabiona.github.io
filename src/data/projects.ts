@@ -18,6 +18,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'decouple',
+    year: '2026',
+    summary:
+      'Strava to Snowflake pipeline measuring heart-rate/pace decoupling, orchestrated with Airflow and Cosmos.',
+    detail:
+      'Extraction is incremental, with the watermark derived from the warehouse rather than a local file, so a run that fetches but fails to load re-fetches instead of silently skipping activities. Cosmos renders each dbt model as its own Airflow task, and the marts withhold the acute:chronic workload ratio until 28 days of history exist rather than reporting a confident number off a partial window. Written to answer a real training question, so the modelling decisions had to survive contact with data I know first-hand.',
+    stack: ['Airflow', 'Astronomer Cosmos', 'dbt', 'Snowflake', 'Python'],
+    repo: 'https://github.com/adedayoabiona/decouple',
+    featured: true,
+  },
+  {
     name: 'IremboAnalytics',
     year: '2026',
     summary:
@@ -36,7 +47,6 @@ export const projects: Project[] = [
       'A deliberately small production-shaped pipeline: an authenticated REST extract, a deployment defined in `prefect.yaml`, and a schedule. The same orchestration pattern I run at scale in production, sized so the whole thing can be read in one sitting.',
     stack: ['Python', 'Prefect', 'REST APIs'],
     repo: 'https://github.com/adedayoabiona/spotify-data-logger',
-    featured: true,
   },
   {
     name: 'MIRNet',
